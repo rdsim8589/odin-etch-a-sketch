@@ -13,10 +13,11 @@
         </div>
         <div class="input">
             <input type="button" value="create grid">
-            <input type="text" id="size" name="size">
+            <input type="number" id="size" name="size" min="0" max="100" step="1" pattern="^[-/d]/d*$">
+        </div>
+        <div class="warning hidden">
         </div>
         <div class="container">
-
         </div>
     </body>
 </html>
