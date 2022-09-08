@@ -8,15 +8,32 @@ function createRow() {
     for (let i = 0; i < 16; i++) {
         const square = document.createElement("div");
         square.classList.add(`square-${i}`, "square");
-        square.innerHTML = `square-${i}`;
         row.appendChild(square);
     }
     return row;
 }
 
 // method to call  and insert into the html
-const container = document.querySelector(".container");
-for (let i = 0; i < 16; i++) {
-    console.log(`enter ${i}`);
-    container.appendChild(createRow());
+function buildGrind() {
+    const container = document.querySelector(".container");
+    for (let i = 0; i < 16; i++) {
+        console.log(`enter ${i}`);
+        container.appendChild(createRow());
+    }
 }
+
+function changeColor(event) {
+    this.style.cssText = "background-color: aqua"
+    console.log("hello");
+}
+
+function start() {
+    buildGrind();
+    //hovereffect to change color of square
+    const squares = document.querySelectorAll(".square");
+    squares.forEach(square =>{
+        square.addEventListener('mouseover', changeColor);
+    })
+}
+
+start();
